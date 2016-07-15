@@ -24,8 +24,8 @@ Meteor.startup(() => {
 	}
 
 	// Add a limit statement to limit number of employees displayed
-	Meteor.publish('employees', function(){
-		return Employees.find({}, {limit: 20});
+	Meteor.publish('employees', function(per_page){
+		return Employees.find({}, {limit: per_page});
 	});
 });
 
